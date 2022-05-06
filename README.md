@@ -55,6 +55,9 @@ Please use the dockerfile and config file to set the google cloud connection and
 ### [Data stagging layer] Kafka Cluster:
 A kafka cluster with three brokers have been built to stage the data between the ingestion and data store layers
 
+### BigQuery:
+Once the data is persisted on the google cloud storage, data flow is triggered to move the data from gcs to bigquery.
+
 ### Airflow:
 The workflow of the data ingestion pipeline consists of two tasks and one sensor. 
 - Task 1: Ingest the data from the google trends api and pushes it to the kafka topic
