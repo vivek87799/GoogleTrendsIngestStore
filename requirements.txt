@@ -1,0 +1,6 @@
+pytrends
+kafka-python
+faust
+google-cloud-storage
+
+

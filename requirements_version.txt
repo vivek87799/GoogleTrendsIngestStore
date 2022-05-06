@@ -1,0 +1,6 @@
+pytrends==4.8.0 
+kafka-python==1.4.7
+faust==1.10.4
+google-cloud-storage==2.3.0
+
+
