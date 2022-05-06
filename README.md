@@ -48,7 +48,8 @@ The parameters for quering the google trends service (keywords for quering, time
 ### [Stage 2] Data Store Service:
 This has a standalone daemon service. Faust is used as an alternative to heavy weight Spark and Flink as this stage does not require any heavy data transformation.  
 Faust is a light weight stream and event processing framework built with python. It runs multiple agents in parallel and each agent in concurent this potential can be leveraged to handle real time stream processing and batch processing of the data. As all the agents run in parallel it could also use handle light weight data transformation for future enhancements.  
-Once the data is received from the kafka topic the agent persists the data to a file which triggers the airflow sensor to initiate the service to store the data to the cloud.   
+Once the data is received from the kafka topic the agent persists the data to a file which triggers the airflow sensor to initiate the service to store the data to the cloud.  
+Please use the dockerfile and config file to set the google cloud connection and the bucket name. 
 [Repository for Data Store Service](https://github.com/vivek87799/google_trends_store.git)
 
 ### [Data stagging layer] Kafka Cluster:
