@@ -2,12 +2,12 @@ class Fields:
     RECORDS = "records"
     INDEX = "index"
     DATE = "date"
-    DATE_FORMAT = "%Y-/%m-/%d"
+    DATE_FORMAT = "%Y-%m-%d"
 class Parameters:
     LANGUAGE = "en-US"
     TIME_ZONE = 360
 
-    KW_LIST = ["Artificial Intelligence", "machine learning", "Neural Networks", "Deep Learning", "BigQuery"]
+    KW_LIST = ["Data Engineering", "Airflow", "Kafka", "Spark", "Flink"]
     TIMEFRAME = "today 12-m"
 
     LOG_FILE_PATH = "logs"

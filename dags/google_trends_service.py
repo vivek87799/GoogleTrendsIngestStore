@@ -8,6 +8,7 @@ import os
 
 import pathlib
 import pendulum
+import time
 from typing import List, Dict, Any
 
 from airflow import DAG
@@ -81,12 +82,15 @@ def google_trends_ingest_store()-> None:
         BUCKET_NAME = os.environ.get(Fields.GCP_GCS_BUCKET, Parameters.DEFAULT_BUCKET_NAME)
         DESTINATION_BLOB_NAME = os.environ.get(Fields.DESTINATION_BLOB_NAME, Parameters.DEFAULT_DESTINATION_BLOB_NAME)
         
-        # TO be secured
+        # TODO be secured
         storage_client = storage.Client.from_service_account_json(Parameters.SERVICE_ACC_KEY_PATH)
+        
         bucket = storage_client.bucket(BUCKET_NAME)
-        blob = bucket.blob(DESTINATION_BLOB_NAME)
+        # create a new blob with time stamped
+        new_blob_name = DESTINATION_BLOB_NAME+time.strftime(Fields.STRFTIME)
+        new_blob = bucket.blob(new_blob_name)
 
-        blob.upload_from_filename(file_path)
+        new_blob.upload_from_filename(file_path)
         logger.debug("Retrived data successfully pushed to google cloud storage")
         
         # Delete the file

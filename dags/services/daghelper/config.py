@@ -6,6 +6,7 @@ class Fields:
     GCP_DESTINATION_BLOB_NAME = "GCP_DESTINATION_BLOB_NAME"
     DESTINATION_BLOB_NAME = "DESTINATION_BLOB_NAME"
     TAGS = "Google Trends ingest and store"
+    STRFTIME = "%Y%m%d%H%M%S"
 
 class Parameters: 
     DEFAULT_BUCKET_NAME = "trends-data01"
